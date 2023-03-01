@@ -6,4 +6,5 @@ RUN pip install --no-cache-dir --upgrade web.py mysqlclient
 COPY ./server.py /server.py
 COPY ./navbar.py /navbar.py
 COPY ./album.py /album.py
-CMD [ "python", "/server.py", "/navbar.py","/album.py" ]
+COPY ./artist.py /artist.py
+CMD [ "python", "/server.py", "/navbar.py", "/album.py", "/artist.py" ]

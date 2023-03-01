@@ -2,12 +2,13 @@ import web
 from database import Db
 from navbar import Navbar
 from album import Album
-
+from artist import Artist
 web.config.debug = True
 
 urls = (
     '/', 'index',
     '/album', 'Album',
+    '/artist', 'Artist',
 
 )
 
