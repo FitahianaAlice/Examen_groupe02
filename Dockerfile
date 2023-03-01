@@ -8,4 +8,5 @@ COPY ./navbar.py /navbar.py
 COPY ./album.py /album.py
 COPY ./artist.py /artist.py
 COPY ./employee.py /employee.py
-CMD [ "python", "/server.py", "/navbar.py", "/album.py", "/artist.py", "/employee.py" ]
+COPY ./customer.py /customer.py
+CMD [ "python", "/server.py", "/navbar.py", "/album.py", "/artist.py", "/employee.py", "/customer.py" ]
