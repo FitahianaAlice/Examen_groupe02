@@ -4,6 +4,7 @@ from navbar import Navbar
 from album import Album
 from artist import Artist
 from employee import Employee
+from customer import Customer
 web.config.debug = True
 
 urls = (
@@ -11,7 +12,7 @@ urls = (
     '/album', 'Album',
     '/artist', 'Artist',
     '/employee', 'Employee',
-
+    '/customer', 'Customer',
 )
 
 class index:
