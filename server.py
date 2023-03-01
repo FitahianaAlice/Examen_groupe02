@@ -8,6 +8,7 @@ from customer import Customer
 from invoice import Invoice
 from genre import Genre
 from invoiceLine import InvoiceLine
+from playlist import Playlist
 
 web.config.debug = True
 
@@ -20,6 +21,7 @@ urls = (
     '/invoice', 'Invoice',
     '/genre', 'Genre',
     '/invoiceLine', 'InvoiceLine'
+    '/playlist', 'Playlist'
 
 )
 
