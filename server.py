@@ -1,4 +1,5 @@
 import web
+import database from db
 
 web.config.debug = True
 
