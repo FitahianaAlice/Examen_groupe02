@@ -3,12 +3,14 @@ from database import Db
 from navbar import Navbar
 from album import Album
 from artist import Artist
+from employee import Employee
 web.config.debug = True
 
 urls = (
     '/', 'index',
     '/album', 'Album',
     '/artist', 'Artist',
+    '/employee', 'Employee',
 
 )
 

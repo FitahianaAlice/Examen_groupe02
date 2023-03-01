@@ -7,4 +7,5 @@ COPY ./server.py /server.py
 COPY ./navbar.py /navbar.py
 COPY ./album.py /album.py
 COPY ./artist.py /artist.py
-CMD [ "python", "/server.py", "/navbar.py", "/album.py", "/artist.py" ]
+COPY ./employee.py /employee.py
+CMD [ "python", "/server.py", "/navbar.py", "/album.py", "/artist.py", "/employee.py" ]
