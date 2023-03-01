@@ -2,7 +2,7 @@ import web
 from navbar import Navbar
 from database import Db
 
-web.config.debug = True
+web.config.debug = False
 
 urls = (
     '/', 'index',
