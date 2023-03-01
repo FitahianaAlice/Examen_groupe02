@@ -7,6 +7,8 @@ from employee import Employee
 from customer import Customer
 from invoice import Invoice
 from genre import Genre
+from invoiceLine import InvoiceLine
+
 web.config.debug = True
 
 urls = (
@@ -17,6 +19,8 @@ urls = (
     '/customer', 'Customer',
     '/invoice', 'Invoice',
     '/genre', 'Genre'
+    '/invoiceLine', 'InvoiceLine'
+
 )
 
 class index:
