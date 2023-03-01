@@ -10,5 +10,7 @@ COPY ./artist.py /artist.py
 COPY ./employee.py /employee.py
 COPY ./customer.py /customer.py
 COPY ./invoice.py /invoice.py
+COPY ./genre.py /genre.py
 COPY ./invoiceLine.py /invoiceLine.py
-CMD [ "python", "/server.py", "/navbar.py", "/album.py", "/artist.py", "/employee.py", "/customer.py", "/invoice.py", "/invoiceLine.py" ]
+CMD [ "python", "/server.py", "/navbar.py", "/album.py", "/artist.py", "/employee.py", "/customer.py", "/invoice.py","/genre.py", "/invoiceLine.py" ]
+
