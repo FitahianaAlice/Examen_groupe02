@@ -1,5 +1,6 @@
 import web
 from database import Db
+from navbar import Navbar
 
 web.config.debug = True
 
