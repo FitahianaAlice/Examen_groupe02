@@ -1,30 +1,16 @@
 import web
 from database import Db
 from navbar import Navbar
-from artist import Artist
-from customer import Customer
-from genre import Genre
-from employee import Employee
-from invoice import Invoice
 from album import Album
-from invoiceLine import InvoiceLine 
-from mediaType import MediaType
-from playlist import Playlist
-
+from artist import Artist
+from employee import Employee
 web.config.debug = True
 
 urls = (
     '/', 'index',
-    '/artist', 'Artist',
-    '/genre', 'Genre',
-    '/employee', 'Employee',
-    '/invoice', 'Invoice',
     '/album', 'Album',
-    '/invoiceLine', 'InvoiceLine',
-    '/mediaType', 'MediaType',
-    '/customer', 'Customer',
-    '/playlist', 'Playlist', 
-    '/playlistTrack', 'PlaylistTrack'
+    '/artist', 'Artist',
+    '/employee', 'Employee',
 
 )
 
