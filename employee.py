@@ -9,6 +9,7 @@ urls = (
     '/artist', 'Artist',
     '/album', 'Album'
     '/employee', 'Employee',
+    '/invoice', 'Invoice'
 )
 
 class Employee:
