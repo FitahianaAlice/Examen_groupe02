@@ -1,5 +1,5 @@
 import web
-from database import db
+from database import Db
 
 web.config.debug = True
 
