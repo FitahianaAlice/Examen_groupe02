@@ -20,7 +20,7 @@ urls = (
     '/customer', 'Customer',
     '/invoice', 'Invoice',
     '/genre', 'Genre',
-    '/invoiceLine', 'InvoiceLine'
+    '/invoiceLine', 'InvoiceLine',
     '/playlist', 'Playlist'
 
 )
