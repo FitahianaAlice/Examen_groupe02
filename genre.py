@@ -19,7 +19,7 @@ class Genre:
         navbar = Navbar()
         navbar_html = navbar.get_navbar()
         footer = Footer()
-        footer_html = footer.get_navbar()
+        footer_html = footer.get_footer()
         d = Db()
         db = d.getDb()
         a2=db.select('Album', limit=8)
