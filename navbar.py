@@ -8,7 +8,7 @@ class Navbar:
         result += '<nav class="navbar navbar-expand navbar-light bg-info w-75 mt-4 mb-4 ml-auto mr-auto rounded" >'
         result += '<div class="container justify-content-md-center">'
         result += '<ul class="navbar-nav">'
-        result += '<li class="nav-item"><a class="nav-link text-light" aria-current="page" href="/accueil">Tous les albums</a></li>'
+        result += '<li class="nav-item"><a class="nav-link text-light" aria-current="page" href="/accueil">All</a></li>'
         result += '<li class="nav-item"><a class="nav-link text-light" aria-current="page" href="/album">Album</a></li>'
         result += '<li class="nav-item"><a class="nav-link text-light" href="/artist">Artist</a></li>'
         result += '<li class="nav-item"><a class="nav-link text-light" href="/customer">Customer</a></li>'
