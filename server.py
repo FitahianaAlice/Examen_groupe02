@@ -1,6 +1,7 @@
 import web
 from database import Db
 from navbar import Navbar
+from footer import Footer
 from album import Album
 from artist import Artist
 from employee import Employee
@@ -23,7 +24,8 @@ urls = (
     '/genre', 'Genre',
     '/invoiceLine', 'InvoiceLine',
     '/playlist', 'Playlist',
-    '/mediaType', 'MediaType'
+    '/mediaType', 'MediaType',
+    '/footer', 'Footer'
 
 )
 
@@ -31,6 +33,8 @@ class index:
     def GET(self):
         navbar = Navbar()
         navbar_html = navbar.get_navbar()
+        footer = Footer()
+        footer_html = footer.get_footer()
         d = Db()
         db = d.getDb()
         a2=db.select('Album', limit=8)
@@ -80,6 +84,7 @@ class index:
             result += '<td>' +a.Title+'</td>'
             result += '</tr>'
         result += '</table>'
+        result += footer_html
         result += '</body></html>'
         return result
 

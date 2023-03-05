@@ -1,6 +1,7 @@
 import web
 from navbar import Navbar
 from database import Db
+from footer import Footer
 
 web.config.debug = True
 
@@ -18,6 +19,8 @@ class Customer:
     def GET(self):
         navbar = Navbar()
         navbar_html = navbar.get_navbar()
+        footer = Footer()
+        footer_html = footer.get_footer()
         d = Db()
         db = d.getDb()
         a2=db.select('Album', limit=8)
@@ -40,6 +43,7 @@ class Customer:
         result += '</table>'
         result += '</div>'
         result += '</body></html>'
+        result += footer_html
         return result
 
 if __name__ == "__main__":
