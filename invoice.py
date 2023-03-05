@@ -1,6 +1,7 @@
 import web
 from navbar import Navbar
 from database import Db
+from footer import Footer
 
 web.config.debug = False
 
