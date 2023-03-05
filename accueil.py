@@ -15,7 +15,8 @@ from mediatype import MediaType
 web.config.debug = True
 
 urls = (
-    '/', 'index',
+    '/','accueil',
+    '/accueil', 'index',
     '/album', 'Album',
     '/artist', 'Artist',
     '/employee', 'Employee',

@@ -6,7 +6,7 @@ from footer import Footer
 web.config.debug = False
 
 urls = (
-    '/', 'index',
+    '/accueil', 'index',
     '/invoice', 'Invoice',
 )
 

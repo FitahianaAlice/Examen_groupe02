@@ -1,11 +1,32 @@
 import web
+from database import Db
 from accueil import index
-
+from navbar import Navbar
+from footer import Footer
+from album import Album
+from artist import Artist
+from employee import Employee
+from customer import Customer
+from invoice import Invoice
+from genre import Genre
+from invoiceLine import InvoiceLine
+from playlist import Playlist
+from mediatype import MediaType
 web.config.debug = False
 
 urls = (
     '/','accueil',
-    '/accueil', 'index'
+    '/accueil', 'index',
+    '/album', 'Album',
+    '/artist', 'Artist',
+    '/employee', 'Employee',
+    '/customer', 'Customer',
+    '/invoice', 'Invoice',
+    '/genre', 'Genre',
+    '/invoiceLine', 'InvoiceLine',
+    '/playlist', 'Playlist',
+    '/mediaType', 'MediaType',
+    '/footer', 'Footer'
 )
 
 class accueil:
