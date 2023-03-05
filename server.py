@@ -1,93 +1,171 @@
 import web
-from database import Db
-from navbar import Navbar
-from footer import Footer
-from album import Album
-from artist import Artist
-from employee import Employee
-from customer import Customer
-from invoice import Invoice
-from genre import Genre
-from invoiceLine import InvoiceLine
-from playlist import Playlist
-from mediatype import MediaType
+from accueil import index
 
-web.config.debug = True
+web.config.debug = False
 
 urls = (
-    '/', 'index',
-    '/album', 'Album',
-    '/artist', 'Artist',
-    '/employee', 'Employee',
-    '/customer', 'Customer',
-    '/invoice', 'Invoice',
-    '/genre', 'Genre',
-    '/invoiceLine', 'InvoiceLine',
-    '/playlist', 'Playlist',
-    '/mediaType', 'MediaType',
-    '/footer', 'Footer'
-
+    '/','accueil',
+    '/accueil', 'index'
 )
 
-class index:
+class accueil:
     def GET(self):
-        navbar = Navbar()
-        navbar_html = navbar.get_navbar()
-        footer = Footer()
-        footer_html = footer.get_footer()
-        d = Db()
-        db = d.getDb()
-        a2=db.select('Album', limit=8)
-        a3=db.select('Artist', limit=8)
-        grs=db.select('Genre', limit=8)
-        cstm=db.select('Customer', limit=8)
-        playList=db.select('Playlist', limit=8)
-        employe=db.select('Employee', limit=8)
-        invc=db.select('Invoice', limit=8)
-        invcline=db.select('InvoiceLine', limit=8)
-        mdtype=db.select('MediaType', limit=8)
-        playlistTrack=db.select('PlaylistTrack', limit=8)
-        track=db.select('Track', limit=8)
-        result = navbar_html
-        result += '<table class="container-fluid table table-border" border= "1">'
-        result += '<tr class="bg-primary text-white text-center"><th>Id Artist</th><th>Artists</th><th>Genres</th><th>Customer</th><th>Employee</th><th>Invoice</th><th>InvoiceLine</th><th>MediaType</th><th>Playlists</th><th>Playlists Tracks</th><th>Albums</th></tr>'
-        for a in a2:
-            result += '<tr>'
-            for artist in a3:
-                result += '<td class="bg-dark text-white text-center">' + str(a.ArtistId) + '</td>'
-                result += '<td>' +artist.Name+'</td>' 
-                break 
-            for genre in grs:
-                result += '<td>' +genre.Name+'</td>'
-                break
-            for customer in cstm:
-                result += '<td>' +customer.FirstName+'</td>' 
-                break
-            for employee in employe:
-                result += '<td>' +employee.LastName+'</td>'
-                break
-            for invoice in invc:
-                result += '<td>' +invoice.BillingCity+'</td>' 
-                break
-            for invoiceLine in invcline:
-                result += '<td>' +invoice.BillingCity+'</td>' 
-                break
-            for MediaType in mdtype:
-                result += '<td>' +MediaType.Name+'</td>' 
-                break
-            for playlist in playList:
-                result += '<td>' +playlist.Name+'</td>'
-                break
-            for playlist_track in playlistTrack:
-                result += '<td>' +playlist.Name+'</td>'
-                break
-            result += '<td>' +a.Title+'</td>'
-            result += '</tr>'
-        result += '</table>'
-        result += footer_html
-        result += '</body></html>'
-        return result
+        return '''
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+     <title>Animation background</title>
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+   
+    
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Candara";
+      overflow-x: hidden;
+    }
 
+    section {
+      position: relative;
+      width: 100%;
+      background: url(https://images.alphacoders.com/808/thumbbig-80833.webp) center;
+      }
+
+    section h2 {
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin-top: -240px;
+      margin-left: 300px;
+      text-align: center;
+      line-height: 100vh;
+      font-size: 5vw;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .banner .blocks {
+      position: relative;
+      display: block;
+      width: 10vw;
+      height: 10vw;
+      animation: animate 2s ease-in-out forwards;
+    }
+
+    .banner .blocks:nth-child(even) {
+      animation: animate 4s ease-in-out forwards;
+    }
+
+    .banner .blocks:nth-child(7n + 3) {
+      animation: animate 9.5s ease-in-out forwards;
+    }
+
+    .banner .blocks:nth-child(7n + 7) {
+      animation: animate 5.5s ease-in-out forwards;
+    }
+
+    @keyframes animate {
+      0% {
+        opacity: 0;
+        transform: scale(0) translateY(900px);
+      }
+      50% {
+        opacity: 1;
+        background: url("https://i.pinimg.com/originals/fe/1b/8e/fe1b8e5e62ee2cef454f11432e4b24e8.jpg");
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0px);
+      }
+    }
+  </style>
+  </head>
+  <body id="accueil">
+    <div class="container">
+      <header
+        class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
+        >
+          <svg class="bi me-2" width="40" height="32">
+            <use xlink:href="#bootstrap" />
+          </svg>
+          <img src="https://st4.depositphotos.com/11953928/24769/v/450/depositphotos_247699532-stock-illustration-music-icon-cartoon.jpg" width="120px" class="text-dark rounded" alt="Logo">
+        </a>
+
+        <ul class="nav nav-pills mt-4">
+          <li class="nav-item">
+            <a href="#accueil" class="nav-link fs-4" aria-current="page">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a href="#membre" class="nav-link fs-4">Membres du groupe</a>
+          </li>
+          <li class="nav-item"><a href="/accueil" class="nav-link fs-4">Voir tout >>></a></li>
+        </ul>
+      </header>
+    </div>
+
+    <section>
+      <h2>THE MUSIC WEBSITE</h2>
+      <div class="banner">
+        <div class="blocks"></div>
+      </div>
+    </section>
+    <article id="membre" class="text-center mt-5">
+      <h1>Les membres du Groupe 02</h1>
+      <div class="row mt-5 border p-4 rounded bg-primary">
+        <div class="col-md-6">
+          <img src="https://cdn-icons-png.flaticon.com/512/5556/5556487.png" alt="avatar" class="rounded" width="25%" />
+        </div>
+        <div class="col-md-6 mt-5">
+          <h2 class="border-bottom w-75 m-auto text-light">Njiva Ariaina</h2>
+          <span class="fs-4">DTS Web: L1</span>
+        </div>
+      </div>
+      <div class="row mt-5 mb-5 border p-4 rounded bg-success">
+        <div class="col-md-6 mt-5">
+          <h2 class="border-bottom text-light w-75 m-auto">Fitahiana Valisoa</h2>
+          <span class="fs-4">License: L1</span>
+        </div>
+        <div class="col-md-6">
+          <img src="https://previews.123rf.com/images/juliasart/juliasart1704/juliasart170400208/75545532-vecteur-ic%C3%B4ne-fille-avatar-femme-ic%C3%B4ne-de-visage-style-de-bande-dessin%C3%A9e.jpg" alt="avatar" class="rounded" width="25%" />
+        </div>
+      </div>
+    </article>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Kfw/ZfLsBbsW/v98ZDd2Q89fUJi6UwH6mE2unQ2XgU+cOaMrmZxBKjPLdLgmhC5/" crossorigin="anonymous"></script>
+
+ <script>
+      const banner = document.getElementsByClassName("banner")[0];
+      const blocks = document.getElementsByClassName("blocks");
+
+      for (var i = 1; i < 400; i++) {
+        banner.innerHTML += "<div class='blocks'></div>";
+        blocks[i].style.animationDelay = `${i * 0.05}s`;
+      }
+    </script>
+  </body>
+</html>
+'''
 if __name__ == "__main__":
     app = web.application(urls, globals())
     app.run()
