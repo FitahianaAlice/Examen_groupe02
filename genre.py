@@ -38,6 +38,7 @@ class Genre:
         result += '</tbody>'
         result += '</table>'
         result += '</div>'
+        result += footer_html
         return result
 
 if __name__ == "__main__":

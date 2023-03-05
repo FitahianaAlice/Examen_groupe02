@@ -44,6 +44,7 @@ class InvoiceLine:
         result += '</table>'
         result += '</div>'
         result += '</body></html>'
+        result += footer_html
         return result
 
 if __name__ == "__main__":
