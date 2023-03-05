@@ -14,6 +14,7 @@ COPY ./genre.py /genre.py
 COPY ./invoiceLine.py /invoiceLine.py
 COPY ./playlist.py /playlist.py
 COPY ./mediatype.py /mediatype.py
+COPY ./footer.py /footer.py
 
-CMD [ "python", "/server.py", "/navbar.py", "/album.py", "/artist.py", "/employee.py", "/customer.py", "/invoice.py","/genre.py", "/invoiceLine.py", "/playlist.py","/mediatype.py" ]
+CMD [ "python", "/server.py", "/navbar.py", "/album.py", "/artist.py", "/employee.py", "/customer.py", "/invoice.py","/genre.py", "/invoiceLine.py", "/playlist.py","/mediatype.py","/footer.py" ]
 
